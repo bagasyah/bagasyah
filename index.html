@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul class="logo">
+                <img src="/img/SK2.png" alt=""width="80px" height="80px">
+            </ul>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#close">Messege Us</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="contain">
+                <h1>Hi <span id="awal"></span>, Welcome to Sticker Ku</h1>
+            </div>
+            <div class="logohome">
+                <img src="/img/SK2.png" alt=""width="250px" height="250px">
+            </div>
+            <div>
+
+            </div>
+            <div class="headquarter">
+                <h1>Our Headquarter</h1>
+                <div class="foto">
+                <figure>
+                <img src="/img/lampung.jpeg" alt=""width="200px" height="200px">
+                <figcaption>Lampung</figcaption>
+                </figure>
+                <figure>
+                <img src="/img/jakarta.jpg" alt=""width="200px" height="200px">
+                <figcaption>Jakarta</figcaption>
+                </figure>
+                <figure>
+                <img src="/img/palembang.JPG" alt=""width="200px" height="200px">
+                <figcaption>Palembang</figcaption>
+                </figure>
+            </div>
+            </div>
+        </main>
+        <footer>
+            <div id="close">
+            <div class="penutup">
+                <h1>
+                    Message Us
+                </h1>
+                <div class="input-output">
+                <div class="input">
+                <form name="message-form" onsubmit="return validateForm()">
+                    Nama : 
+                    <input placeholder="Nama" type="text" name="full-name"style="width:280px;height:25px"/>
+                    <br />
+                    Tanggal Lahir :
+                    <input type="date" name="birth-date"style="width:216px;height:25px"/>
+                    <br />
+                    Jenis Kelamin :
+                    <input type="radio" id="male" name="gender" value="Laki-Laki" />
+                    <label for="male">Laki-Laki</label>
+                    <input type="radio" id="female" name="gender" value="Perempuan "/>
+                    <label for="female">Perempuan</label>
+                    <br />
+                    Pesan :
+                    <textarea placeholder="Pesan" name="messages" style="resize: none; height:100px;width: 282px;"></textarea>
+                    <br />
+                    <input type="submit" value="Submit" style="width:350px;height:25px;background-color: red;color: white" />
+                </form>
+            
+                <script>
+                    function validateForm(){
+                        var name = document.forms["message-form"]["full-name"].value;
+                        var date = document.forms["message-form"]["birth-date"].value;
+                        var gender = document.forms["message-form"]["gender"].value;
+                        var message = document.forms["message-form"]["messages"].value;
+                    
+                        if(name == "" || date =="" || gender ==""  || message == ""){
+                            alert("Tidak boleh ada yang kosong");
+                            return false;
+                        }
+                        document.getElementById("sender-full-name").innerText = name;
+                        document.getElementById("awal").innerText =name
+                        document.getElementById("sender-birth-date").innerText = date;
+                        document.getElementById("sender-gender").innerText = gender;
+                        document.getElementById("sender-messages").innerText = message;
+                        return false;
+                    }
+                </script>
+                </div>
+                <div class="form-output">
+                    <p>Nama : <span id="sender-full-name"></span></p>
+                    <p>Tanggal Lahir : <span id="sender-birth-date"></span></p>
+                    <p>Jenis Kelamin : <span id="sender-gender"></span></p>
+                    <p>Pesan : <span id="sender-messages"></span></p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="tanda" >
+        <p>Created By Bagasyah</p>
+        </div>
+        </footer>      
+    </div>
+</body>
+</html>
